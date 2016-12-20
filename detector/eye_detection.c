@@ -25,7 +25,7 @@ void detect_face(IplImage* frame, CvHaarClassifierCascade* eye_cascade,
 	cvClearMemStorage(storage);
 
 	CvSeq *faces = cvHaarDetectObjects(frame, face_cascade, storage, 1.2, 5,
-			CV_HAAR_SCALE_IMAGE, cvSize(100, 100), cvSize(0, 0));
+			CV_HAAR_SCALE_IMAGE, cvSize(110, 110), cvSize(0, 0));
 	if(faces->total == 0) 
 		return;
 	
@@ -92,7 +92,7 @@ void process_video(CvHaarClassifierCascade *eye_cascade,
 		}
 
 		detect_face(frame,eye_cascade, face_cascade, storage);
-		key = cvWaitKey(10);
+		key = cvWaitKey(25);
 	}
 
 	if(storage) 
