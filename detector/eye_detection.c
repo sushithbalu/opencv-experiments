@@ -3,11 +3,6 @@
 #include <highgui.h>
 #include <assert.h>
 
-/*
-status:Incomplete
-TODO:cpu usage issue, code cleanup
- */
-
 //to locate cascade use: locate haarcascade_eye.xml
 const char* eye_cascade_name = "/usr/share/opencv/haarcascades/haarcascade_eye.xml";
 const char* face_cascade_name = "/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml";
@@ -63,8 +58,6 @@ void detect_face(IplImage* frame, CvHaarClassifierCascade* eye_cascade,
 void process_video(CvHaarClassifierCascade *eye_cascade, 
 		CvHaarClassifierCascade *face_cascade, CvMemStorage *storage)
 {           
-
-
 	// Initialize camera
 	CvCapture *capture = 0;
 
